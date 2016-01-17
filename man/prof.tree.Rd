@@ -12,4 +12,13 @@ prof.tree(filename = "Rprof.out")
 \description{
 Summarise the output of the Rprof function to show the amount of time used by different R functions.
 }
+\examples{
+\dontrun{
+Rprof()
+some code to be profiled
+Rprof(NULL)
+prof.tree()
+}
+
+}
 

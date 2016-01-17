@@ -4,6 +4,14 @@
 #' @include parse.R env.R
 #' @importFrom data.tree FromDataFrameTable isNotRoot isNotLeaf Aggregate SetFormat FormatPercent
 #' @export
+#' @examples
+#' \dontrun{
+#' Rprof()
+#' some code to be profiled
+#' Rprof(NULL)
+#' prof.tree()
+#' }
+#'
 prof.tree <- function(filename = "Rprof.out") {
     calls <- parse_log(filename)
     tree <- FromDataFrameTable(calls)

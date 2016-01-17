@@ -6,7 +6,7 @@ parse_log <- function(filename) {
     interval <- as.numeric(strsplit(prof_log[1L],split = "=", fixed = TRUE)[[1L]][2L]) / 1e06
     prof_log <- prof_log[-1L]
     calls <- unique(prof_log, fromLast = TRUE)
-    calls <- calls[!grep("^#File", calls)]
+    calls <- calls[!grepl("^#File", calls)]
     calls <- gsub("<GC>|\\d+#\\d+", "", calls)
     calls <- gsub("(?<=[\\s])\\s*|^\\s+|\\s+$", "", calls, perl = TRUE)
     real.time <- tabulate(match(prof_log, calls)) * interval
