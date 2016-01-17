@@ -27,8 +27,16 @@ prof.tree <- function(filename = "Rprof.out") {
     return(tree)
 }
 
+#' @param x A \code{prof.tree} object.
+#' @param max.level A number of maximum level.
+#' @param ... not used.
+#' @rdname prof.tree
 #' @importFrom data.tree ToDataFrameTree
 #' @export
-print.ProfTree <- function(x, ...) {
-    print(ToDataFrameTree(x, "real", "percent", "env"))
+print.ProfTree <- function(x, max.level = 5, ...) {
+    stopifnot(is.numeric(max.level))
+    toprint <- ToDataFrameTree(x, "real", "percent", "env",
+                               pruneFun = function(node) node$level <= max.level + 1)
+    print(toprint)
+    invisible(x)
 }
