@@ -11,7 +11,6 @@
 #' Rprof(NULL)
 #' prof.tree()
 #' }
-#'
 prof.tree <- function(filename = "Rprof.out") {
     calls <- parse_log(filename)
     tree <- FromDataFrameTable(calls)

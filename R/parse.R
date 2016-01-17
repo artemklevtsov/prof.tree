@@ -1,18 +1,41 @@
 parse_log <- function(filename) {
-    prof_log <- scan(filename, what = "character", quote = "\"", sep = "\n",
+    proflog <- scan(filename, what = "character", quote = "\"", sep = "\n",
                      strip.white = TRUE, multi.line = FALSE, quiet = TRUE)
-    if (length(prof_log) < 2L)
+    if (length(proflog) < 2L)
         stop(sprintf("'%s' file is empty.", filename))
-    interval <- as.numeric(strsplit(prof_log[1L],split = "=", fixed = TRUE)[[1L]][2L]) / 1e06
-    prof_log <- prof_log[-1L]
-    calls <- unique(prof_log, fromLast = TRUE)
-    calls <- calls[!grepl("^#File", calls)]
-    calls <- gsub("<GC>|\\d+#\\d+", "", calls)
-    calls <- gsub("(?<=[\\s])\\s*|^\\s+|\\s+$", "", calls, perl = TRUE)
-    real.time <- tabulate(match(prof_log, calls)) * interval
+    first <- proflog[1L]
+    proflog <- proflog[-1L]
+    interval <- as.numeric(strsplit(first, "=", fixed = TRUE)[[1L]][2L]) / 1e06
+    calls <- unique(proflog, fromLast = TRUE)
+    calls <- remove_extra_info(calls, first)
+    calls <- remove_source_frame(calls)
+    real.time <- tabulate(match(proflog, calls)) * interval
     total.time <- sum(real.time)
     pct.time <- real.time / total.time
     calls <- lapply(strsplit(calls, split = " ", fixed = TRUE), rev)
     calls <- vapply(calls, function(x) paste(c("calls", x), collapse = "/"), character(1L))
     data.frame(pathString = calls, real = real.time, percent = pct.time, stringsAsFactors = FALSE)
+}
+
+remove_source_frame <- function(calls) {
+    pattern <- " eval eval withVisible source$"
+    idx <- grepl(pattern, calls)
+    if (sum(idx) == length(calls))
+        calls <- sub(pattern, "", calls)
+    calls
+}
+
+remove_extra_info <- function(calls, meta) {
+    if (!grepl("profiling", meta, fixed = TRUE))
+        return(calls)
+    if (grepl("line profiling", meta, fixed = TRUE)) {
+        calls <- calls[!grepl("#File ", calls, fixed = TRUE)]
+        calls <- gsub("\\d+#\\d+", "", calls)
+    }
+    if (grepl("memory profiling", meta, fixed = TRUE))
+        calls <- gsub("^:.*:", "", calls)
+    if (grepl("GC profiling", meta, fixed = TRUE))
+        calls <- gsub("<GC>", "", calls, fixed = TRUE)
+    calls <- calls[nzchar(calls)]
+    gsub("(?<=[\\s])\\s*|^\\s+|\\s+$", "", calls, perl = TRUE)
 }

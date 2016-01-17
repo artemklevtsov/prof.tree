@@ -28,6 +28,5 @@ some code to be profiled
 Rprof(NULL)
 prof.tree()
 }
-
 }
 
