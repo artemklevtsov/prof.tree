@@ -17,3 +17,5 @@ Collate:
     'env.R'
     'parse.R'
     'prof-tree.R'
+Suggests:
+    testthat

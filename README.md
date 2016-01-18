@@ -1,5 +1,7 @@
 # prof.tree
 
+[![Travis-CI Build Status](https://travis-ci.org/artemklevtsov/prof.tree.svg?branch=master)](https://travis-ci.org/artemklevtsov/prof.tree)
+
 Provied an alternative profiling data diplay as tree structure.
 
 ## Installation
