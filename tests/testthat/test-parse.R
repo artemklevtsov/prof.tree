@@ -1,5 +1,11 @@
 context("Parse log")
 
+test_that("Correct input", {
+    expect_error(parse_log(1))
+    expect_error(parse_log(""))
+    expect_error(parse_log(c("Rprof.out", "Rprof-source.out")))
+})
+
 test_that("Output classes", {
     proflog <- parse_log("Rprof.out")
     expect_is(proflog, "data.frame")
@@ -22,4 +28,3 @@ test_that("Remove GC", {
     proflog <- parse_log("Rprof-gc.out")
     expect_false(all(grepl("<GC>", proflog$pathString)))
 })
-

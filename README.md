@@ -2,7 +2,7 @@
 
 [![Travis-CI Build Status](https://travis-ci.org/artemklevtsov/prof.tree.svg?branch=master)](https://travis-ci.org/artemklevtsov/prof.tree) [![Coverage Status](https://img.shields.io/codecov/c/github/artemklevtsov/prof.tree/master.svg)](https://codecov.io/github/artemklevtsov/prof.tree?branch=master)
 
-Provied an alternative profiling data diplay as tree structure.
+Provide an alternative profiling data diplay as tree structure.
 
 ## Installation
 
