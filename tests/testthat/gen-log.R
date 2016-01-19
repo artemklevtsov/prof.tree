@@ -22,7 +22,7 @@ for (i in 1:100) {
 }
 Rprof(NULL)
 
-Rprof("Rprof-gcline.out", interval = 0.001, line.profiling = TRUE, gc.profiling = TRUE)
+Rprof("Rprof-gc.out", interval = 0.001, line.profiling = TRUE, gc.profiling = TRUE)
 for (i in 1:100) {
     clotting <- data.frame(
         u = c(5,10,15,20,30,40,60,80,100),
@@ -36,3 +36,5 @@ Rprof(NULL)
 Rprof("Rprof-source.out", interval = 0.001, line.profiling = TRUE)
 source("script.R")
 Rprof(NULL)
+
+knitr::knit("profile.Rmd")
