@@ -11,6 +11,7 @@
 #' Rprof(NULL)
 #' prof.tree()
 #' }
+#'
 prof.tree <- function(filename = "Rprof.out") {
     calls <- parse_log(filename)
     tree <- FromDataFrameTable(calls)
@@ -20,22 +21,17 @@ prof.tree <- function(filename = "Rprof.out") {
             traversal = "post-order", filterFun = isNotLeaf)
     tree$Do(function(node) node$percent <- node$percent + Aggregate(node, "percent", sum),
             traversal = "post-order", filterFun = isNotLeaf)
-    tree$Do(function(node) node$env <- fun_env(node$name), filterFun = isNotRoot)
+    tree$Do(function(node) node$env <- get_envname(node$name), filterFun = isNotRoot)
     SetFormat(tree, "percent", function(x) FormatPercent(x, digits = 2))
     class(tree) <- c("ProfTree", class(tree))
     return(tree)
 }
 
-#' @param x A \code{prof.tree} object.
-#' @param max.level A number of maximum level.
+#' @param x A \code{ProfTree} object.
+#' @param limit The maximum number of nodes to print. Can be \code{NULL} if the entire tree should be printed.
 #' @param ... not used.
 #' @rdname prof.tree
-#' @importFrom data.tree ToDataFrameTree
 #' @export
-print.ProfTree <- function(x, max.level = 5, ...) {
-    stopifnot(is.numeric(max.level))
-    toprint <- ToDataFrameTree(x, "real", "percent", "env",
-                               pruneFun = function(node) node$level <= max.level + 1)
-    print(toprint)
-    invisible(x)
+print.ProfTree <- function(x, ..., limit = 10) {
+    NextMethod("print", x, "real", "percent", "env", limit = limit, pruneMethod = "dist")
 }
