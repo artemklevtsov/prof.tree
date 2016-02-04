@@ -6,4 +6,5 @@ test_that("Get environment name", {
     expect_equal(get_envname("prof.tree"), "prof.tree")
     expect_equal(get_envname("mean"), "base")
     expect_equal(get_envname(".try_quietly"), "tools")
+    expect_equal(get_envname("parse_log"), "prof.tree")
 })

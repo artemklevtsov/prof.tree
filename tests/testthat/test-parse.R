@@ -16,15 +16,20 @@ test_that("Output classes", {
 
 test_that("Remove source frame", {
     proflog <- parse_log("Rprof-source.out")
-    expect_false(all(grepl("source$", proflog$pathString)))
+    expect_false(any(grepl("source", proflog$pathString)))
+})
+
+test_that("Remove knitr frame", {
+    proflog <- parse_log("Rprof-knitr.out")
+    expect_false(any(grepl("process_file", proflog$pathString)))
 })
 
 test_that("Remove line number", {
     proflog <- parse_log("Rprof-line.out")
-    expect_false(all(grepl("\\d+#\\d+", proflog$pathString)))
+    expect_false(any(grepl("\\d+#\\d+", proflog$pathString)))
 })
 
 test_that("Remove GC", {
     proflog <- parse_log("Rprof-gc.out")
-    expect_false(all(grepl("<GC>", proflog$pathString)))
+    expect_false(any(grepl("<GC>", proflog$pathString)))
 })
