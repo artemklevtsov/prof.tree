@@ -1,4 +1,6 @@
 parse_log <- function(filename, remove.frame = c("source", "knitr")) {
+    if (filename == "")
+        stop("'filename' not specified.")
     proflog <- scan(filename, what = "character", quote = "\"", sep = "\n",
                      strip.white = TRUE, multi.line = FALSE, quiet = TRUE)
     if (length(proflog) < 2L)
