@@ -2,6 +2,13 @@ context("Tree structure")
 
 tree <- prof.tree("Rprof.out")
 
+test_that("Input errors", {
+    file.create(tmp <- tempfile())
+    expect_error(prof.tree(tmp))
+    expect_error(prof.tree(""))
+    expect_error(prof.tree(tempfile()))
+})
+
 test_that("prof.tree class", {
     expect_is(tree, "ProfTree")
     expect_is(tree, "Node")
