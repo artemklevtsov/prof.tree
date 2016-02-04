@@ -22,7 +22,7 @@ prof.tree <- function(filename = "Rprof.out") {
     tree$Do(function(node) node$percent <- node$percent + Aggregate(node, "percent", sum),
             traversal = "post-order", filterFun = isNotLeaf)
     tree$Do(function(node) node$env <- get_envname(node$name), filterFun = isNotRoot)
-    SetFormat(tree, "percent", function(x) FormatPercent(x, digits = 2))
+    SetFormat(tree, "percent", function(x) FormatPercent(x, digits = 1))
     class(tree) <- c("ProfTree", class(tree))
     return(tree)
 }
