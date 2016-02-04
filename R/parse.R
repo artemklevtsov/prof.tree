@@ -1,4 +1,4 @@
-parse_log <- function(filename) {
+parse_log <- function(filename, remove.frame = c("source", "knitr")) {
     proflog <- scan(filename, what = "character", quote = "\"", sep = "\n",
                      strip.white = TRUE, multi.line = FALSE, quiet = TRUE)
     if (length(proflog) < 2L)
@@ -13,27 +13,29 @@ parse_log <- function(filename) {
     total.time <- sum(real.time)
     pct.time <- real.time / total.time
     calls <- remove_extra_info(calls, first)
-    calls <- remove_source_frame(calls)
+    if ("source" %in% remove.frame)
+        calls <- remove_source_frame(calls)
+    if ("knitr" %in% remove.frame)
+        calls <- remove_knitr_frame(calls)
     calls <- lapply(strsplit(calls, split = " ", fixed = TRUE), rev)
     calls <- vapply(calls, function(x) paste(c("calls", x), collapse = "/"), character(1L))
-    data.frame(pathString = calls, real = real.time, percent = pct.time, stringsAsFactors = FALSE)
+    structure(list(pathString = calls, real = real.time, percent = pct.time),
+              class = "data.frame", row.names = seq_along(calls))
 }
 
 remove_source_frame <- function(calls) {
-    pattern <- " eval eval withVisible source$"
-    idx <- grepl(pattern, calls)
-    if (sum(idx) == length(calls))
-        calls <- sub(pattern, "", calls)
+    ind <- grep(" eval eval withVisible source$", calls)
+    if (length(ind) == length(calls))
+        calls <- sub(" eval eval withVisible source$", "", calls)
     calls
 }
 
 remove_knitr_frame <- function(calls) {
-    pattern <- " process_file <Anonymous>$"
-    idx <- grepl(pattern, calls)
-    if (sum(idx) == length(calls)) {
-        calls <- sub(" evaluate_call <Anonymous> in_dir block_exec call_block process_group.block process_group withCallingHandlers process_file <Anonymous>$", "", calls)
-        calls <- sub(" eval eval withVisible withCallingHandlers doTryCatch tryCatchOne tryCatchList tryCatch try handle$", "", calls)
-    }
+    ind <- grep(" process_file <Anonymous>", calls)
+    if (length(ind) != length(calls))
+        return(calls)
+    calls <- sub(" eval eval withVisible withCallingHandlers( doTryCatch tryCatchOne tryCatchList tryCatch try)? handle evaluate_call <Anonymous> in_dir block_exec call_block process_group.block process_group withCallingHandlers process_file <Anonymous>( <Anonymous>)?$", "", calls)
+    calls <- sub("", "", calls)
     calls
 }
 
