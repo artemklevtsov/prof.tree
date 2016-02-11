@@ -1,9 +1,9 @@
-language: r
+language: R
+cache: packages
 warnings_are_errors: true
-sudo: required
 r_github_packages:
  - gluc/data.tree@dev
-r_packages:
+r_binary_packages:
   - covr
 after_success:
   - Rscript -e 'covr::codecov()'
