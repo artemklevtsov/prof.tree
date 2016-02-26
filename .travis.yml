@@ -1,8 +1,6 @@
 language: R
 cache: packages
 warnings_are_errors: true
-r_github_packages:
- - gluc/data.tree@dev
 r_binary_packages:
   - covr
 after_success:
