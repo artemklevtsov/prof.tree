@@ -7,16 +7,16 @@
 \usage{
 prof.tree(filename = "Rprof.out")
 
-\method{print}{ProfTree}(x, ..., limit = 10)
+\method{print}{ProfTree}(x, limit = 10, ...)
 }
 \arguments{
 \item{filename}{Name of a file produced by Rprof().}
 
 \item{x}{A \code{ProfTree} object.}
 
-\item{...}{not used.}
-
 \item{limit}{The maximum number of nodes to print. Can be \code{NULL} if the entire tree should be printed.}
+
+\item{...}{not used.}
 }
 \description{
 Summarise the output of the Rprof function to show the amount of time used by different R functions.

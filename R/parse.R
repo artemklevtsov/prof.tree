@@ -21,8 +21,10 @@ parse_log <- function(filename, remove.frame = c("source", "knitr")) {
         calls <- remove_knitr_frame(calls)
     calls <- lapply(strsplit(calls, split = " ", fixed = TRUE), rev)
     calls <- vapply(calls, function(x) paste(c("calls", x), collapse = "/"), character(1L))
-    structure(list(pathString = calls, real = real.time, percent = pct.time),
-              class = "data.frame", row.names = seq_along(calls))
+    res <- list(pathString = calls, real = real.time, percent = pct.time)
+    class(res) <- "data.frame"
+    attr(res, "row.names") <- .set_row_names(length(calls))
+    res
 }
 
 remove_source_frame <- function(calls) {

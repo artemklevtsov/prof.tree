@@ -32,6 +32,6 @@ prof.tree <- function(filename = "Rprof.out") {
 #' @param ... not used.
 #' @rdname prof.tree
 #' @export
-print.ProfTree <- function(x, ..., limit = 10) {
+print.ProfTree <- function(x, limit = 10, ...) {
     NextMethod("print", x, "real", "percent", "env", limit = limit, pruneMethod = "dist")
 }
