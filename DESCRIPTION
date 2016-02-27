@@ -19,4 +19,5 @@ Collate:
     'parse.R'
     'prof-tree.R'
 Suggests:
-    testthat
+    testthat,
+    covr
