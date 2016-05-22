@@ -12,7 +12,7 @@ test_that("Print contains", {
     expect_output(print(tree), "real")
     expect_output(print(tree), "percent")
     expect_output(print(tree), "env")
-    expect_output(print(tree), "calls")
+    expect_output(print(tree), " *")
     expect_output(print(tree), "100.0 %")
 
 })
