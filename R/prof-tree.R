@@ -5,13 +5,12 @@
 #' @importFrom data.tree FromDataFrameTable isNotRoot isNotLeaf Aggregate SetFormat FormatPercent
 #' @export
 #' @examples
-#' \dontrun{
 #' Rprof(tmp <- tempfile())
 #' example(glm)
 #' Rprof(NULL)
-#' prof.tree(tmp)
+#' tree <- prof.tree(tmp)
+#' print(tree, limit = 20)
 #' unlink(tmp)
-#' }
 #'
 prof.tree <- function(filename = "Rprof.out") {
     tree <- FromDataFrameTable(parse_log(filename))

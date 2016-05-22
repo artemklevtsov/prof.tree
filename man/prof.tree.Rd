@@ -22,13 +22,12 @@ prof.tree(filename = "Rprof.out")
 Summarise the output of the Rprof function to show the amount of time used by different R functions.
 }
 \examples{
-\dontrun{
 Rprof(tmp <- tempfile())
 example(glm)
 Rprof(NULL)
-prof.tree(tmp)
+tree <- prof.tree(tmp)
+print(tree, limit = 20)
 unlink(tmp)
-}
 
 }
 
