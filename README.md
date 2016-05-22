@@ -33,23 +33,23 @@ for (i in seq_along(means))
 Rprof(NULL)
 library(prof.tree)
 prof.tree(tmp)
-#>                           levelName real  percent  env
-#> 1  calls                            1.38 100.00 %     
-#> 2   ¦--apply                        0.92  66.67 % base
-#> 3   ¦   ¦--as.matrix                0.12   8.70 % base
-#> 4   ¦   ¦   °--... 1 nodes w/ 1 sub   NA              
-#> 5   ¦   ¦--aperm                    0.26  18.84 % base
-#> 6   ¦   ¦   °--... 1 nodes w/ 0 sub   NA              
-#> 7   ¦   °--FUN                      0.04   2.90 %     
-#> 8   ¦       °--... 1 nodes w/ 0 sub   NA              
-#> 9   ¦--[<-                          0.38  27.54 % base
-#> 10  ¦   °--[<-.data.frame           0.38  27.54 % base
-#> 11  ¦       °--... 3 nodes w/ 7 sub   NA              
-#> 12  ¦--[                            0.02   1.45 % base
-#> 13  ¦   °--[.data.frame             0.02   1.45 % base
-#> 14  ¦       °--... 1 nodes w/ 0 sub   NA              
-#> 15  °---                            0.06   4.35 % base
 unlink(tmp)
+#>                               levelName real percent  env
+#> 1   *                                   5.66 100.0 %     
+#> 2   ¦--`apply`                          4.58  80.9 % base
+#> 3   ¦   ¦--`as.matrix`                  2.34  41.3 % base
+#> 4   ¦   ¦   °--`as.matrix.data.frame`   2.34  41.3 % base
+#> 5   ¦   ¦       °--... 1 nodes w/ 0 sub   NA             
+#> 6   ¦   ¦--`aperm`                      1.42  25.1 % base
+#> 7   ¦   ¦   °--... 1 nodes w/ 0 sub       NA             
+#> 8   ¦   °--`FUN`                        0.16   2.8 %     
+#> 9   ¦       °--... 1 nodes w/ 0 sub       NA             
+#> 10  ¦--`[<-`                            0.62  11.0 % base
+#> 11  ¦   °--`[<-.data.frame`             0.62  11.0 % base
+#> 12  ¦       ¦--`order`                  0.32   5.7 % base
+#> 13  ¦       ¦   °--... 4 nodes w/ 1 sub   NA             
+#> 14  ¦       °--... 1 nodes w/ 5 sub       NA             
+#> 15  °--`-`                              0.46   8.1 % base
 ```
 
 Bug reports
