@@ -30,7 +30,7 @@ devtools::install_github("artemklevtsov/prof.tree")
 
 ## Example
 
-```{r}
+```{r engine = "Rscript"}
 times <- 4e5
 cols <- 150
 data <- as.data.frame(x = matrix(rnorm(times * cols, mean = 5), ncol = cols))
