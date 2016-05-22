@@ -2,14 +2,20 @@
 prof.tree
 =========
 
-[![Travis-CI Build Status](https://travis-ci.org/artemklevtsov/prof.tree.svg?branch=master)](https://travis-ci.org/artemklevtsov/prof.tree) [![Coverage Status](https://img.shields.io/codecov/c/github/artemklevtsov/prof.tree/master.svg)](https://codecov.io/github/artemklevtsov/prof.tree?branch=master)
+[![Travis-CI Build Status](https://travis-ci.org/artemklevtsov/prof.tree.svg?branch=master)](https://travis-ci.org/artemklevtsov/prof.tree) [![Coverage Status](https://img.shields.io/codecov/c/github/artemklevtsov/prof.tree/master.svg)](https://codecov.io/github/artemklevtsov/prof.tree?branch=master) [![CRAN Status](http://www.r-pkg.org/badges/version/prof.tree)](https://cran.r-project.org/package=prof.tree)
 
 Provide an alternative profiling data diplay as tree structure.
 
 Installation
 ------------
 
-prof.tree is not yet on CRAN; it is currently available from GitHub. Make sure you have the devtools package installed, and then run:
+To install the latest release version from CRAN with:
+
+``` r
+install.packages("RGA")
+```
+
+To install the development version the `install_github()` function from `devtools` package can be used:
 
 ``` r
 devtools::install_github("artemklevtsov/prof.tree")
@@ -35,21 +41,21 @@ library(prof.tree)
 prof.tree(tmp)
 unlink(tmp)
 #>                               levelName real percent  env
-#> 1   *                                   5.66 100.0 %     
-#> 2   ¦--`apply`                          4.58  80.9 % base
-#> 3   ¦   ¦--`as.matrix`                  2.34  41.3 % base
-#> 4   ¦   ¦   °--`as.matrix.data.frame`   2.34  41.3 % base
+#> 1   *                                   1.50 100.0 %     
+#> 2   ¦--`apply`                          0.94  62.7 % base
+#> 3   ¦   ¦--`as.matrix`                  0.16  10.7 % base
+#> 4   ¦   ¦   °--`as.matrix.data.frame`   0.16  10.7 % base
 #> 5   ¦   ¦       °--... 1 nodes w/ 0 sub   NA             
-#> 6   ¦   ¦--`aperm`                      1.42  25.1 % base
+#> 6   ¦   ¦--`aperm`                      0.30  20.0 % base
 #> 7   ¦   ¦   °--... 1 nodes w/ 0 sub       NA             
-#> 8   ¦   °--`FUN`                        0.16   2.8 %     
+#> 8   ¦   °--`FUN`                        0.04   2.7 %     
 #> 9   ¦       °--... 1 nodes w/ 0 sub       NA             
-#> 10  ¦--`[<-`                            0.62  11.0 % base
-#> 11  ¦   °--`[<-.data.frame`             0.62  11.0 % base
-#> 12  ¦       ¦--`order`                  0.32   5.7 % base
-#> 13  ¦       ¦   °--... 4 nodes w/ 1 sub   NA             
-#> 14  ¦       °--... 1 nodes w/ 5 sub       NA             
-#> 15  °--`-`                              0.46   8.1 % base
+#> 10  ¦--`[<-`                            0.44  29.3 % base
+#> 11  ¦   °--`[<-.data.frame`             0.44  29.3 % base
+#> 12  ¦       ¦--`order`                  0.26  17.3 % base
+#> 13  ¦       ¦   °--... 3 nodes w/ 3 sub   NA             
+#> 14  ¦       °--... 1 nodes w/ 6 sub       NA             
+#> 15  °--`-`                              0.12   8.0 % base
 ```
 
 Bug reports
