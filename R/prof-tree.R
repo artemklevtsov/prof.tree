@@ -6,10 +6,11 @@
 #' @export
 #' @examples
 #' \dontrun{
-#' Rprof()
-#' some code to be profiled
+#' Rprof(tmp <- tempfile())
+#' example(glm)
 #' Rprof(NULL)
-#' prof.tree()
+#' prof.tree(tmp)
+#' unlink(tmp)
 #' }
 #'
 prof.tree <- function(filename = "Rprof.out") {
