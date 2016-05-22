@@ -19,11 +19,6 @@ test_that("Remove source frame", {
     expect_false(any(grepl("source", proflog$pathString)))
 })
 
-test_that("Remove knitr frame", {
-    proflog <- parse_log("Rprof-knitr.out")
-    expect_false(any(grepl("process_file", proflog$pathString)))
-})
-
 test_that("Remove line number", {
     proflog <- parse_log("Rprof-line.out")
     expect_false(any(grepl("\\d+#\\d+", proflog$pathString)))

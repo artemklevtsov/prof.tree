@@ -36,5 +36,3 @@ Rprof(NULL)
 Rprof("Rprof-source.out", interval = 0.001, line.profiling = TRUE)
 source("script.R")
 Rprof(NULL)
-
-knitr::knit("profile.Rmd")

@@ -1,6 +1,8 @@
-parse_log <- function(filename, remove.frame = c("source", "knitr")) {
-    if (filename == "")
-        stop("'filename' not specified.")
+parse_log <- function(filename) {
+    stopifnot(is.character(filename))
+    stopifnot(length(filename) == 1L)
+    if (!file.exists(filename))
+        stop(sprintf("'%s' does not exists.", filename))
     proflog <- scan(filename, what = "character", quote = "\"", sep = "\n",
                      strip.white = TRUE, multi.line = FALSE, quiet = TRUE)
     if (length(proflog) < 2L)
@@ -15,12 +17,9 @@ parse_log <- function(filename, remove.frame = c("source", "knitr")) {
     total.time <- sum(real.time)
     pct.time <- real.time / total.time
     calls <- remove_extra_info(calls, first)
-    if ("source" %in% remove.frame)
-        calls <- remove_source_frame(calls)
-    if ("knitr" %in% remove.frame)
-        calls <- remove_knitr_frame(calls)
+    calls <- remove_source_frame(calls)
     calls <- lapply(strsplit(calls, split = " ", fixed = TRUE), rev)
-    calls <- vapply(calls, function(x) paste(c("calls", x), collapse = "/"), character(1L))
+    calls <- vapply(calls, function(x) paste(c(" *", x), collapse = "/"), character(1L))
     res <- list(pathString = calls, real = real.time, percent = pct.time)
     class(res) <- "data.frame"
     attr(res, "row.names") <- .set_row_names(length(calls))
@@ -31,15 +30,6 @@ remove_source_frame <- function(calls) {
     ind <- grep(" eval eval withVisible source$", calls)
     if (length(ind) == length(calls))
         calls <- sub(" eval eval withVisible source$", "", calls)
-    calls
-}
-
-remove_knitr_frame <- function(calls) {
-    ind <- grep(" process_file <Anonymous>", calls)
-    if (length(ind) != length(calls))
-        return(calls)
-    calls <- sub(" eval eval withVisible withCallingHandlers( doTryCatch tryCatchOne tryCatchList tryCatch try)? handle evaluate_call <Anonymous> in_dir block_exec call_block process_group.block process_group withCallingHandlers process_file <Anonymous>( <Anonymous>)?$", "", calls)
-    calls <- sub("", "", calls)
     calls
 }
 
