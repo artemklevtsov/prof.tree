@@ -13,8 +13,7 @@
 #' }
 #'
 prof.tree <- function(filename = "Rprof.out") {
-    calls <- parse_log(filename)
-    tree <- FromDataFrameTable(calls)
+    tree <- FromDataFrameTable(parse_log(filename))
     tree$Set(real = 0, filterFun = function(node) is.null(node$real))
     tree$Set(percent = 0, filterFun = function(node) is.null(node$percent))
     tree$Do(function(node) node$real <- node$real + Aggregate(node, "real", sum),
@@ -22,6 +21,7 @@ prof.tree <- function(filename = "Rprof.out") {
     tree$Do(function(node) node$percent <- node$percent + Aggregate(node, "percent", sum),
             traversal = "post-order", filterFun = isNotLeaf)
     tree$Do(function(node) node$env <- get_envname(node$name), filterFun = isNotRoot)
+    tree$Do(function(node) node$name <- sprintf("`%s`", node$name), filterFun = isNotRoot)
     SetFormat(tree, "percent", function(x) FormatPercent(x, digits = 1))
     class(tree) <- c("ProfTree", class(tree))
     return(tree)
