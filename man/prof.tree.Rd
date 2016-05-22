@@ -23,10 +23,11 @@ Summarise the output of the Rprof function to show the amount of time used by di
 }
 \examples{
 \dontrun{
-Rprof()
-some code to be profiled
+Rprof(tmp <- tempfile())
+example(glm)
 Rprof(NULL)
-prof.tree()
+prof.tree(tmp)
+unlink(tmp)
 }
 
 }
