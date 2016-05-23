@@ -19,7 +19,7 @@ parse_log <- function(filename) {
     calls <- remove_extra_info(calls, first)
     calls <- remove_source_frame(calls)
     calls <- lapply(strsplit(calls, split = " ", fixed = TRUE), rev)
-    calls <- vapply(calls, function(x) paste(c(" *", x), collapse = "/"), character(1L))
+    calls <- vapply(calls, function(x) paste(c(" \u00B0", x), collapse = "/"), character(1L))
     res <- list(pathString = calls, real = real.time, percent = pct.time)
     class(res) <- "data.frame"
     attr(res, "row.names") <- .set_row_names(length(calls))
@@ -27,9 +27,10 @@ parse_log <- function(filename) {
 }
 
 remove_source_frame <- function(calls) {
-    ind <- grep(" eval eval withVisible source$", calls)
+    pattern <- " eval eval withVisible source$"
+    ind <- grep(pattern, calls)
     if (length(ind) == length(calls))
-        calls <- sub(" eval eval withVisible source$", "", calls)
+        calls <- sub(pattern, "", calls)
     calls
 }
 

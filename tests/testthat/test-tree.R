@@ -19,8 +19,8 @@ test_that("Root has more than 0 children", {
     expect_gt(tree$count, 0)
 })
 
-test_that("Root name is calls", {
-    expect_equal(tree$name, " *")
+test_that("Root name is circle", {
+    expect_equal(tree$name, " \u00B0")
 })
 
 test_that("Root call environment is null", {
