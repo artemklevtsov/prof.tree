@@ -1,9 +1,10 @@
 #' @title Summarise Output of R Sampling Profiler
-#' @description Summarise the output of the Rprof function to show the amount of time used by different R functions.
-#' @param filename Name of a file produced by Rprof().
+#' @description Summarise the output of the \code{\link{Rprof}} function to show the amount of time used by different R functions as tree structure.
+#' @param filename Name of a file produced by \code{Rprof()}.
 #' @include parse.R env.R
 #' @importFrom data.tree FromDataFrameTable isNotRoot isNotLeaf Aggregate SetFormat FormatPercent
 #' @export
+#' @seealso \code{\link{Rprof}} \code{\link{summaryRprof}}  \code{\link[data.tree]{plot.Node}}
 #' @examples
 #' Rprof(tmp <- tempfile())
 #' example(glm)
@@ -32,6 +33,8 @@ prof.tree <- function(filename = "Rprof.out") {
 #' @param ... not used.
 #' @rdname prof.tree
 #' @export
-print.ProfTree <- function(x, limit = 10, ...) {
-    NextMethod("print", x, "real", "percent", "env", limit = limit, pruneMethod = "dist")
+#'
+print.ProfTree <- function(x, limit = 25, ...) {
+    NextMethod("print", x, "real", "percent", "env",
+               pruneMethod = "dist", limit = limit)
 }

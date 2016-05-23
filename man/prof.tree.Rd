@@ -7,10 +7,10 @@
 \usage{
 prof.tree(filename = "Rprof.out")
 
-\method{print}{ProfTree}(x, limit = 10, ...)
+\method{print}{ProfTree}(x, limit = 25, ...)
 }
 \arguments{
-\item{filename}{Name of a file produced by Rprof().}
+\item{filename}{Name of a file produced by \code{Rprof()}.}
 
 \item{x}{A \code{ProfTree} object.}
 
@@ -19,7 +19,7 @@ prof.tree(filename = "Rprof.out")
 \item{...}{not used.}
 }
 \description{
-Summarise the output of the Rprof function to show the amount of time used by different R functions.
+Summarise the output of the \code{\link{Rprof}} function to show the amount of time used by different R functions as tree structure.
 }
 \examples{
 Rprof(tmp <- tempfile())
@@ -29,5 +29,10 @@ tree <- prof.tree(tmp)
 print(tree, limit = 20)
 unlink(tmp)
 
+}
+\seealso{
+\code{\link{Rprof}} \code{\link{summaryRprof}}
+
+\code{\link[data.tree]{plot.Node}}
 }
 
