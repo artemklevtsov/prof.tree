@@ -12,7 +12,7 @@ Installation
 To install the latest release version from CRAN with:
 
 ``` r
-install.packages("RGA")
+install.packages("prof.tree")
 ```
 
 To install the development version the `install_github()` function from `devtools` package can be used:
