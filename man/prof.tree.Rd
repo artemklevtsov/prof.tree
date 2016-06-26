@@ -18,6 +18,9 @@ prof.tree(filename = "Rprof.out")
 
 \item{...}{not used.}
 }
+\value{
+An object of \code{ProfTree} and \code{Node} classes.
+}
 \description{
 Summarise the output of the \code{\link{Rprof}} function to show the amount of time used by different R functions as tree structure.
 }
@@ -31,8 +34,6 @@ unlink(tmp)
 
 }
 \seealso{
-\code{\link{Rprof}} \code{\link{summaryRprof}}
-
-\code{\link[data.tree]{plot.Node}}
+\code{\link{Rprof}} \code{\link{summaryRprof}} \code{\link[data.tree]{plot.Node}}
 }
 
