@@ -24,7 +24,7 @@ prof.tree <- function(filename = "Rprof.out") {
             traversal = "post-order", filterFun = isNotLeaf)
     tree$Do(function(node) node$env <- get_envname(node$name), filterFun = isNotRoot)
     tree$Do(function(node) node$name <- sprintf("`%s`", node$name), filterFun = isNotRoot)
-    if ("line" %in% res$fieldsAll) {
+    if ("line" %in% tree$fieldsAll) {
         tree$Do(function(node) node$file <- node$parent$file,
                 traversal = "pre-order", filterFun = function(node) is.null(node$file))
         tree$Do(function(node) node$line <- node$parent$line,
@@ -42,7 +42,7 @@ prof.tree <- function(filename = "Rprof.out") {
 #' @export
 #'
 print.ProfTree <- function(x, limit = 25, ...) {
-    if ("line" %in% res$fieldsAll)
+    if ("line" %in% x$fieldsAll)
         NextMethod("print", x, "real", "percent", "env", "file", "line",
                    pruneMethod = "dist", limit = limit)
     else

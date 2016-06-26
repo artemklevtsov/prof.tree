@@ -12,8 +12,7 @@ parse_log <- function(filename) {
     calls <- unique(proflog, fromLast = TRUE)
     if (metadata$line.profiling) {
         ind <- grep("#File ", calls, fixed = TRUE)
-        fnames <- strsplit(calls[ind], ": ", fixed = TRUE)
-        fnames <- vapply(fnames, .subset2, 2L, FUN.VALUE = "")
+        fnames <- sub("#File \\d+: ?", "", calls[ind])
         calls <- calls[-ind]
         tmp <- strsplit(gsub(".*(\\d#\\d).*", "\\1", calls), "#", fixed = TRUE)
         tmp <- lapply(tmp, as.integer)
@@ -39,7 +38,7 @@ parse_log <- function(filename) {
 get_prof_info <- function(firstline) {
     list(line.profiling = grepl("line profiling", firstline, fixed = TRUE),
          memory.profiling = grepl("memory profiling", firstline, fixed = TRUE),
-         gc.profiling = grepl("gc profiling", firstline, fixed = TRUE),
+         gc.profiling = grepl("GC profiling", firstline, fixed = TRUE),
          interval = as.numeric(strsplit(firstline, "=", fixed = TRUE)[[1L]][2L]) / 1e6)
 }
 
