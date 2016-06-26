@@ -34,5 +34,6 @@ for (i in 1:100) {
 Rprof(NULL)
 
 Rprof("Rprof-source.out", interval = 0.001, line.profiling = TRUE)
-source("script.R")
+source("script1.R")
+source("script2.R")
 Rprof(NULL)

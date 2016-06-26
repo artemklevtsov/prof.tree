@@ -1,148 +1,210 @@
 GC profiling: line profiling: sample.interval=1000
 #File 1: 
-"logical" "na.omit.data.frame" "na.omit" ".External2" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
-"model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
-"deparse" "paste" "force" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
-"match" "mostattributes<-" "pmax" "residuals.glm" "residuals" "summary.glm" "summary" 1#6 
-"names" "names" "match" "summary.glm" "summary" 1#7 
-"order" "make.names" "data.frame" 1#2 
-"as.list" "vapply" "model.matrix.default" "model.matrix" "glm" "summary" 1#7 
-"glm.fit" "eval" "eval" "glm" "summary" 1#6 
-"structure" "family" "glm" "summary" 1#6 
-"anyDuplicated" "[.data.frame" "[" "lapply" ".getXlevels" "glm" "summary" 1#7 
-"match.fun" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#7 
-"summary.glm" "summary" 1#6 
-"structure" "family" "glm" "summary" 1#6 
-"na.omit.data.frame" "na.omit" ".External2" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
-"<GC>" "mostattributes<-" "pmax" "residuals.glm" "residuals" "summary.glm" "summary" 1#7 
-"vapply" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
-"unique.default" "unique" "simplify2array" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#7 
-"na.omit" ".External2" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
-"eval" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
-"vapply" "order" "make.names" "data.frame" 1#2 
-"ifelse" "residuals.glm" "residuals" "summary.glm" "summary" 1#6 
-"mostattributes<-" "pmax" "residuals.glm" "residuals" "summary.glm" "summary" 1#7 
-"unique" "simplify2array" "sapply" ".getXlevels" "glm" "summary" 1#6 
-"paste" "FUN" "lapply" "sapply" ".getXlevels" "glm" "summary" 1#7 
-"[[" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
-".deparseOpts" "deparse" "paste" "FUN" "lapply" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#7 
-"unique.default" "unique" "simplify2array" "sapply" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
-"makepredictcall.default" "makepredictcall" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
-"-" "deparse" "paste" "FUN" "lapply" "sapply" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
-"paste" "FUN" "lapply" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#7 
-"model.matrix.default" "model.matrix" "glm" "summary" 1#6 
+"dev.resids" "glm.fit" "eval" "eval" "glm" "summary" 1#6 
+"names" "match" "glm" "summary" 1#7 
+"match" "%in%" ".deparseOpts" "deparse" "paste" "force" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
+"validmu" "glm.fit" "eval" "eval" "glm" "summary" 1#6 
 "glm.fit" "eval" "eval" "glm" "summary" 1#7 
-"as.matrix" "glm.fit" "eval" "eval" "glm" "summary" 1#6 
-"valideta" "glm.fit" "eval" "eval" "glm" "summary" 1#7 
-"ifelse" "dev.resids" "glm.fit" "eval" "eval" "glm" "summary" 1#6 
-"sapply" "diag" "summary.glm" "summary" 1#7 
-"<GC>" "glm.fit" "eval" "eval" "glm" "summary" 1#6 
-"eval" "glm" "summary" 1#7 
-"is.factor" "FUN" "vapply" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
-"glm.fit" "eval" "eval" "glm" "summary" 1#7 
-"glm" "summary" 1#6 
-"[[" "model.extract" "glm" "summary" 1#7 
-"glm.fit" "eval" "eval" "glm" "summary" 1#6 
-"data.frame" 1#2 
-"[" "summary.glm" "summary" 1#7 
-"ifelse" "dev.resids" "glm.fit" "eval" "eval" "glm" "summary" 1#7 
-".External2" "model.matrix.default" "model.matrix" "glm" "summary" 1#7 
-"[[.data.frame" "[[" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
-"match" "model.matrix.default" "model.matrix" "glm" "summary" 1#7 
-"model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
-"eval" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
-"glm.fit" "eval" "eval" "glm" "summary" 1#6 
-"makepredictcall" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
-"deparse" "paste" "FUN" "lapply" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#7 
-"pmatch" ".deparseOpts" "deparse" "paste" "FUN" "lapply" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
-"glm.fit" "eval" "eval" "glm" "summary" 1#7 
-"summary.glm" "summary" 1#6 
-"model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
-"pmatch" "match.arg" "residuals.glm" "residuals" "summary.glm" "summary" 1#7 
-"glm.fit" "eval" "eval" "glm" "summary" 1#7 
-"[.data.frame" "[" "na.omit.data.frame" "na.omit" ".External2" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
-"pmatch" "match.arg" "residuals.glm" "residuals" "summary.glm" "summary" 1#6 
-"colnames<-" "glm.fit" "eval" "eval" "glm" "summary" 1#6 
-"paste0" "<Anonymous>" "[[.data.frame" "[[" "model.extract" "glm" "summary" 1#6 
-"anyDuplicated" "[.data.frame" "[" "na.omit.data.frame" "na.omit" ".External2" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
-"mode" "match" "%in%" "deparse" "paste" "force" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
-"%*%" "glm.fit" "eval" "eval" "glm" "summary" 1#7 
-"eval" "glm.fit" "eval" "eval" "glm" "summary" 1#6 
-"c" "match" "%in%" "deparse" "paste" "FUN" "lapply" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
-"makepredictcall" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
-"chol2inv" "summary.glm" "summary" 1#7 
-"row" "glm.fit" "eval" "eval" "glm" "summary" 1#7 
-"[[.data.frame" "[[" "[.data.frame" "[" "na.omit.data.frame" "na.omit" ".External2" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
-"as.list.default" "as.list" "lapply" "sapply" ".getXlevels" "glm" "summary" 1#6 
-"getNamespace" "asNamespace" "getExportedValue" "::" "eval" "eval" "glm" "summary" 1#6 
-"unique" "simplify2array" "sapply" ".getXlevels" "glm" "summary" 1#7 
-"match" "model.matrix.default" "model.matrix" "glm" "summary" 1#7 
-"cbind" "summary.glm" "summary" 1#6 
+"match" "%in%" "[[.data.frame" "[[" "model.extract" "glm" "summary" 1#6 
+"all" "valideta" "glm.fit" "eval" "eval" "glm" "summary" 1#7 
 ".Call" "glm.fit" "eval" "eval" "glm" "summary" 1#6 
-"model.matrix" "glm" "summary" 1#6 
-"model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
-"match.fun" "vapply" "pmax" "residuals.glm" "residuals" "summary.glm" "summary" 1#7 
-"structure" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
-"paste" "FUN" "lapply" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#7 
-"makepredictcall" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
-"glm.fit" "eval" "eval" "glm" "summary" 1#7 
-"as.list" "lapply" "sapply" ".getXlevels" "glm" "summary" 1#6 
-"$" "residuals.glm" "residuals" "summary.glm" "summary" 1#7 
+"ifelse" "dev.resids" "glm.fit" "eval" "eval" "glm" "summary" 1#7 
+"validmu" "glm.fit" "eval" "eval" "glm" "summary" 1#6 
+"anyDuplicated" "[.data.frame" "[" "lapply" ".getXlevels" "glm" "summary" 1#7 
+"summary" 1#6 
+"col" "glm.fit" "eval" "eval" "glm" "summary" 1#7 
+"paste" "FUN" "lapply" "sapply" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
+"match.call" "glm" "summary" 1#7 
+"deparse" "paste" "force" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
+"ifelse" "<Anonymous>" "pmax" "residuals.glm" "residuals" "summary.glm" "summary" 1#6 
+"summary.glm" "summary" 1#7 
+"model.response" "glm" "summary" 1#6 
+".deparseOpts" "deparse" "paste" "FUN" "lapply" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#7 
+"paste0" "<Anonymous>" "[[.data.frame" "[[" "model.extract" "glm" "summary" 1#6 
+"paste" "FUN" "lapply" "sapply" ".getXlevels" "glm" "summary" 1#7 
+"match.arg" "residuals.glm" "residuals" "summary.glm" "summary" 1#6 
+"summary" 1#6 
+"unique" "simplify2array" "sapply" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+"chol2inv" "summary.glm" "summary" 1#7 
+"sys.function" "match.call" "glm" "summary" 1#6 
+"chol2inv" "summary.glm" "summary" 1#6 
+"chol2inv" "summary.glm" "summary" 1#6 
+"ifelse" "dev.resids" "glm.fit" "eval" "eval" "glm" "summary" 1#7 
+"chol2inv" "summary.glm" "summary" 1#7 
+"names" "names" "[.data.frame" "[" "na.omit.data.frame" "na.omit" ".External2" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
+"chol2inv" "summary.glm" "summary" 1#6 
+"length" "length" "[.data.frame" "[" "na.omit.data.frame" "na.omit" ".External2" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+"chol2inv" "summary.glm" "summary" 1#7 
+"paste" "force" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
+"paste" "force" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
+"paste" "force" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
+"paste" "force" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
+"paste" "force" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
+"paste" "force" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
+"paste" "force" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
+"paste" "force" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
+"paste" "force" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
+"model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
+"sapply" "diag" "summary.glm" "summary" 1#6 
+"as.list.data.frame" "as.list" "lapply" ".getXlevels" "glm" "summary" 1#7 
+"chol2inv" "summary.glm" "summary" 1#6 
+"chol2inv" "summary.glm" "summary" 1#6 
+"[[.data.frame" "[[" "na.omit.data.frame" "na.omit" ".External2" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+"match" "%in%" ".deparseOpts" "deparse" "paste" "FUN" "lapply" "sapply" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
+"chol2inv" "summary.glm" "summary" 1#6 
+"unlist" "simplify2array" "sapply" "diag" "summary.glm" "summary" 1#6 
+"deparse" "paste" "force" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
+"summary.glm" "summary" 1#6 
+"$" "NCOL" "summary.glm" "summary" 1#7 
+".getNamespaceInfo" "getExportedValue" "::" "eval" "eval" "glm" "summary" 1#7 
+"lengths" "unique" "simplify2array" "sapply" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
+"getNamespace" "asNamespace" "getExportedValue" "::" "eval" "eval" "glm" "summary" 1#7 
+"deparse" "mode" "match" "%in%" "deparse" "paste" "force" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
+"length" "length" "na.omit.data.frame" "na.omit" ".External2" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+"model.matrix.default" "model.matrix" "glm" "summary" 1#6 
+"rep.int" "glm.fit" "eval" "eval" "glm" "summary" 1#7 
 "residuals.glm" "residuals" "summary.glm" "summary" 1#6 
-"c" "structure" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
-"structure" "make.link" "family" "glm" "summary" 1#7 
-"make.unique" "make.names" "data.frame" 1#2 
-"<Anonymous>" "[[.data.frame" "[[" "[.data.frame" "[" "na.omit.data.frame" "na.omit" ".External2" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
-"pmatch" ".deparseOpts" "deparse" "paste" "FUN" "lapply" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
-"model.offset" "as.vector" "glm" "summary" 1#7 
+"is.data.frame" "terms.formula" "terms" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
+"match" "%in%" "[[.data.frame" "[[" "model.extract" "glm" "summary" 1#7 
 "glm.fit" "eval" "eval" "glm" "summary" 1#6 
 "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
-"[" "na.omit.data.frame" "na.omit" ".External2" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
-"[[" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
-"[[.data.frame" "[[" "[.data.frame" "[" "na.omit.data.frame" "na.omit" ".External2" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
-"eval" "glm.fit" "eval" "eval" "glm" "summary" 1#6 
+"<Anonymous>" "[[.data.frame" "[[" "[.data.frame" "[" "na.omit.data.frame" "na.omit" ".External2" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+"logical" "na.omit.data.frame" "na.omit" ".External2" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
+"sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#7 
+"match" "%in%" "[[.data.frame" "[[" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
+"%in%" "[[.data.frame" "[[" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
 "paste" "FUN" "lapply" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
-"[[.data.frame" "[[" "na.omit.data.frame" "na.omit" ".External2" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
-"family" "glm" "summary" 1#6 
-"$" "residuals.glm" "residuals" "summary.glm" "summary" 1#7 
-"aic" "glm.fit" "eval" "eval" "glm" "summary" 1#7 
-"glm.fit" "eval" "eval" "glm" "summary" 1#7 
-"[[" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
-"isNamespace" "asNamespace" "getExportedValue" "::" "eval" "eval" "glm" "summary" 1#7 
-"deparse" "paste" "FUN" "lapply" "sapply" ".getXlevels" "glm" "summary" 1#6 
-"glm.fit" "eval" "eval" "glm" "summary" 1#6 
-"<GC>" "NCOL" "chol2inv" "summary.glm" "summary" 1#7 
-"ifelse" "dev.resids" "glm.fit" "eval" "eval" "glm" "summary" 1#6 
-".deparseOpts" "deparse" "paste" "FUN" "lapply" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
-".deparseOpts" "deparse" "paste" "FUN" "lapply" "sapply" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
-"paste" "force" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
-"chol2inv" "summary.glm" "summary" 1#7 
-"glm.fit" "eval" "eval" "glm" "summary" 1#7 
-"model.matrix.default" "model.matrix" "glm" "summary" 1#7 
-"makepredictcall.default" "makepredictcall" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+"dev.resids" "glm.fit" "eval" "eval" "glm" "summary" 1#7 
+"sapply" "diag" "summary.glm" "summary" 1#6 
+"vapply" "pmax" "residuals.glm" "residuals" "summary.glm" "summary" 1#7 
 "ifelse" "residuals.glm" "residuals" "summary.glm" "summary" 1#6 
-"lapply" "sapply" ".getXlevels" "glm" "summary" 1#6 
-"glm.fit" "eval" "eval" "glm" "summary" 1#6 
-"model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
-"valideta" "glm.fit" "eval" "eval" "glm" "summary" 1#7 
-".External2" "model.matrix.default" "model.matrix" "glm" "summary" 1#7 
-"model.matrix" "glm" "summary" 1#7 
-"length" "na.omit.data.frame" "na.omit" ".External2" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
-"$" "structure" "family" "glm" "summary" 1#7 
-"glm" "summary" 1#6 
-"sum" "rep.int" "glm.fit" "eval" "eval" "glm" "summary" 1#6 
-"ifelse" "dev.resids" "glm.fit" "eval" "eval" "glm" "summary" 1#6 
-"pmatch" ".deparseOpts" "deparse" "mode" "match" "%in%" "deparse" "paste" "FUN" "lapply" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
-"lengths" "unique" "simplify2array" "sapply" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
-"make.unique" "make.names" "data.frame" 1#2 
-"deparse" "paste" "force" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
-"makepredictcall" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
-"match.call" "glm" "summary" 1#7 
-"diag" "summary.glm" "summary" 1#6 
-"deparse" "paste" "FUN" "lapply" "sapply" ".getXlevels" "glm" "summary" 1#6 
-"any" "glm.fit" "eval" "eval" "glm" "summary" 1#6 
+"<GC>" ".Call" "glm.fit" "eval" "eval" "glm" "summary" 1#7 
 ".External2" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
+"dev.resids" "glm.fit" "eval" "eval" "glm" "summary" 1#7 
+"unless.null" "glm.fit" "eval" "eval" "glm" "summary" 1#6 
+"glm.fit" "eval" "eval" "glm" "summary" 1#7 
+"mu.eta" "glm.fit" "eval" "eval" "glm" "summary" 1#6 
+"match.fun" "vapply" ".getXlevels" "glm" "summary" 1#7 
+"diag" "summary.glm" "summary" 1#6 
+"vapply" "order" "make.names" "data.frame" 1#2 
+".External" "terms.formula" "terms" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+".External" "terms.formula" "terms" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
+"lengths" "unique" "simplify2array" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
+"lengths" "unique" "simplify2array" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
+"lengths" "unique" "simplify2array" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
+"lengths" "unique" "simplify2array" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
+"lengths" "unique" "simplify2array" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
+"lengths" "unique" "simplify2array" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
+"lengths" "unique" "simplify2array" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
+"lengths" "unique" "simplify2array" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
+"lengths" "unique" "simplify2array" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
+"vapply" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+"make.link" "family" "glm" "summary" 1#6 
+"as.character" "makepredictcall.default" "makepredictcall" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+"as.list" "lapply" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
+"glm.fit" "eval" "eval" "glm" "summary" 1#7 
+"as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
+"summary.glm" "summary" 1#6 
 "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
-"pmatch" ".deparseOpts" "deparse" "paste" "FUN" "lapply" "sapply" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
-"data.frame" 1#2 
-"$" "summary.glm" "summary" 1#7 
+"unique.default" "unique" "simplify2array" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#7 
+"all" "[[.data.frame" "[[" "$.data.frame" "$" "model.offset" "as.vector" "glm" "summary" 1#6 
+"rep.int" "glm.fit" "eval" "eval" "glm" "summary" 1#7 
+"ifelse" "dev.resids" "glm.fit" "eval" "eval" "glm" "summary" 1#6 
+"residuals.glm" "residuals" "summary.glm" "summary" 1#7 
+"model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+"deparse" "mode" "match" "%in%" "deparse" "paste" "FUN" "lapply" "sapply" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
+"match" "model.matrix.default" "model.matrix" "glm" "summary" 1#7 
+"model.matrix.default" "model.matrix" "glm" "summary" 1#6 
+"structure" "glm.fit" "eval" "eval" "glm" "summary" 1#7 
+"match" "summary.glm" "summary" 1#6 
+"%in%" ".deparseOpts" "deparse" "paste" "FUN" "lapply" "sapply" ".getXlevels" "glm" "summary" 1#7 
+"pmax" "residuals.glm" "residuals" "summary.glm" "summary" 1#6 
+"model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
+"glm.fit" "eval" "eval" "glm" "summary" 1#7 
+"as.matrix" "glm.fit" "eval" "eval" "glm" "summary" 1#6 
+"as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
+"length" "length" "na.omit.data.frame" "na.omit" ".External2" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+"pmatch" ".deparseOpts" "deparse" "mode" "match" "%in%" "deparse" "paste" "FUN" "lapply" "sapply" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
+"chol2inv" "summary.glm" "summary" 1#6 
+"%in%" "deparse" "mode" "match" "%in%" "deparse" "paste" "force" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
+"chol2inv" "summary.glm" "summary" 1#6 
+"chol2inv" "summary.glm" "summary" 1#6 
+"match" "%in%" "[[.data.frame" "[[" "model.matrix.default" "model.matrix" "glm" "summary" 1#7 
+"c" "glm" "summary" 1#6 
+"paste" "force" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
+"model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+"names" "names" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
+"glm.fit" "eval" "eval" "glm" "summary" 1#7 
+"glm.fit" "eval" "eval" "glm" "summary" 1#6 
+"glm.fit" "eval" "eval" "glm" "summary" 1#7 
+"summary.glm" "summary" 1#6 
+"%in%" ".deparseOpts" "deparse" "paste" "FUN" "lapply" "sapply" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
+"glm.fit" "eval" "eval" "glm" "summary" 1#7 
+"$" "match" "%in%" "summary.glm" "summary" 1#6 
+"<GC>" "pmatch" ".deparseOpts" "deparse" "mode" "match" "%in%" "deparse" "paste" "force" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
+"eval" "glm" "summary" 1#6 
+"ifelse" "dev.resids" "glm.fit" "eval" "eval" "glm" "summary" 1#7 
+"attr" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+"variance" "glm.fit" "eval" "eval" "glm" "summary" 1#6 
+"isBaseNamespace" "getExportedValue" "::" "eval" "eval" "glm" "summary" 1#6 
+"unique" "simplify2array" "sapply" ".getXlevels" "glm" "summary" 1#7 
+"as.list" "vapply" "model.matrix.default" "model.matrix" "glm" "summary" 1#7 
+"make.link" "family" "glm" "summary" 1#7 
+"glm.fit" "eval" "eval" "glm" "summary" 1#6 
+"names" "names" "match" "summary.glm" "summary" 1#7 
+"[[" "na.omit.data.frame" "na.omit" ".External2" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+"eval" "glm" "summary" 1#6 
+"sapply" ".getXlevels" "glm" "summary" 1#7 
+"simplify2array" "sapply" "diag" "summary.glm" "summary" 1#6 
+"is.data.frame" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
+"[.data.frame" "[" "na.omit.data.frame" "na.omit" ".External2" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+"pmatch" ".deparseOpts" "deparse" "mode" "match" "%in%" "deparse" "paste" "force" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
+"model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+".deparseOpts" "deparse" "paste" "FUN" "lapply" "sapply" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
+"match" "%in%" "deparse" "mode" "match" "%in%" "deparse" "paste" "FUN" "lapply" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#7 
+"model.matrix.default" "model.matrix" "glm" "summary" 1#6 
+"%in%" "deparse" "paste" "FUN" "lapply" "sapply" ".getXlevels" "glm" "summary" 1#7 
+"mu.eta" "glm.fit" "eval" "eval" "glm" "summary" 1#6 
+"structure" "glm.fit" "eval" "eval" "glm" "summary" 1#7 
+"glm.fit" "eval" "eval" "glm" "summary" 1#6 
+"c" "summary.glm" "summary" 1#7 
+"model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+"match" "%in%" "deparse" "paste" "FUN" "lapply" "sapply" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
+"as.character" "makepredictcall.default" "makepredictcall" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+"match" "%in%" "deparse" "paste" "FUN" "lapply" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
+"glm.fit" "eval" "eval" "glm" "summary" 1#7 
+"cbind" "summary.glm" "summary" 1#6 
+".getNamespaceInfo" "getExportedValue" "::" "eval" "eval" "glm" "summary" 1#6 
+"terms" "is.empty.model" "glm" "summary" 1#7 
+"glm.fit" "eval" "eval" "glm" "summary" 1#6 
+"cbind" "summary.glm" "summary" 1#7 
+"$" "structure" "family" "glm" "summary" 1#7 
+"%in%" ".deparseOpts" "deparse" "mode" "match" "%in%" "deparse" "paste" "FUN" "lapply" "sapply" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
+"is.factor" "unique.default" "unique" "simplify2array" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#7 
+"is.expression" "mode" "match" "%in%" "deparse" "paste" "FUN" "lapply" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
+"glm.fit" "eval" "eval" "glm" "summary" 1#7 
+"dim" "NCOL" "chol2inv" "summary.glm" "summary" 1#6 
+"deparse" "paste" "force" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
+"model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+"paste" "FUN" "lapply" "sapply" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
+"$" "eval" "glm.fit" "eval" "eval" "glm" "summary" 1#7 
+"c" "pmatch" ".deparseOpts" "deparse" "paste" "FUN" "lapply" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
+"%in%" ".deparseOpts" "deparse" "mode" "match" "%in%" "deparse" "paste" "FUN" "lapply" "sapply" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+"FUN" "vapply" "pmax" "residuals.glm" "residuals" "summary.glm" "summary" 1#7 
+"is.array" "is.array" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+"length" "model.offset" "as.vector" "glm" "summary" 1#6 
+"<Anonymous>" "pmax" "residuals.glm" "residuals" "summary.glm" "summary" 1#6 
+"sys.function" "match.call" "glm" "summary" 1#6 
+"as.formula" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+"asNamespace" "getExportedValue" "::" "eval" "eval" "glm" "summary" 1#6 
+"deparse" "mode" "match" "%in%" "deparse" "paste" "FUN" "lapply" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#7 
+"deparse" "mode" "match" "%in%" "deparse" "paste" "FUN" "lapply" "sapply" "match" "model.matrix.default" "model.matrix" "glm" "summary" 1#6 
+"glm.fit" "eval" "eval" "glm" "summary" 1#7 
+"length" "ifelse" "dev.resids" "glm.fit" "eval" "eval" "glm" "summary" 1#6 
+"%in%" ".deparseOpts" "deparse" "mode" "match" "%in%" "deparse" "paste" "force" "as.data.frame.numeric" "as.data.frame" "data.frame" 1#2 
+"anyDuplicated" "[.data.frame" "[" "na.omit.data.frame" "na.omit" ".External2" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+"model.matrix.default" "model.matrix" "glm" "summary" 1#6 
+"summary.glm" "summary" 1#7 
+"model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#7 
+"[[" "[.data.frame" "[" "na.omit.data.frame" "na.omit" ".External2" "model.frame.default" "stats::model.frame" "eval" "eval" "glm" "summary" 1#6 
+"glm.fit" "eval" "eval" "glm" "summary" 1#7 

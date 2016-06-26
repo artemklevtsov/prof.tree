@@ -14,3 +14,9 @@ test_that("Print contains", {
     expect_output(print(tree), " \u00B0")
     expect_output(print(tree), "100.0 %")
 })
+
+test_that("Print contains", {
+    tree <- prof.tree("Rprof-line.out")
+    expect_output(print(tree), "file")
+    expect_output(print(tree), "line")
+})

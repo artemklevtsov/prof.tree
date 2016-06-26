@@ -19,7 +19,7 @@ test_that("Remove source frame", {
     expect_false(any(grepl("source", proflog$pathString)))
 })
 
-test_that("Remove line number", {
+test_that("Remove line numbers", {
     proflog <- parse_log("Rprof-line.out")
     expect_false(any(grepl("\\d+#\\d+", proflog$pathString)))
 })
