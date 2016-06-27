@@ -1,6 +1,6 @@
-setwd("tests/testthat/")
+setwd("tests/testthat")
 
-Rprof("Rprof.out", interval = 0.001)
+Rprof("logs/Rprof.out", interval = 0.001)
 for (i in 1:100) {
     clotting <- data.frame(
         u = c(5,10,15,20,30,40,60,80,100),
@@ -11,7 +11,7 @@ for (i in 1:100) {
 }
 Rprof(NULL)
 
-Rprof("Rprof-line.out", interval = 0.001, line.profiling = TRUE)
+Rprof("logs/Rprof-line.out", interval = 0.001, line.profiling = TRUE)
 for (i in 1:100) {
     clotting <- data.frame(
         u = c(5,10,15,20,30,40,60,80,100),
@@ -22,7 +22,7 @@ for (i in 1:100) {
 }
 Rprof(NULL)
 
-Rprof("Rprof-gc.out", interval = 0.001, line.profiling = TRUE, gc.profiling = TRUE)
+Rprof("logs/Rprof-gc.out", interval = 0.001, line.profiling = TRUE, gc.profiling = TRUE)
 for (i in 1:100) {
     clotting <- data.frame(
         u = c(5,10,15,20,30,40,60,80,100),
@@ -33,7 +33,7 @@ for (i in 1:100) {
 }
 Rprof(NULL)
 
-Rprof("Rprof-source.out", interval = 0.001, line.profiling = TRUE)
+Rprof("logs/Rprof-source.out", interval = 0.001, line.profiling = TRUE)
 source("script1.R")
 source("script2.R")
 Rprof(NULL)

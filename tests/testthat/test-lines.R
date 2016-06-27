@@ -1,6 +1,6 @@
 context("Scripts")
 
-tree <- prof.tree("Rprof-source.out")
+tree <- prof.tree("logs/Rprof-source.out")
 
 test_that("Tree fields", {
     expect_equal(tree$fieldsAll, c("file", "line", "percent", "real", "env"))

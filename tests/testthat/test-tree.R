@@ -1,6 +1,6 @@
 context("Tree structure")
 
-tree <- prof.tree("Rprof.out")
+tree <- prof.tree("logs/Rprof.out")
 
 test_that("empty input", {
     file.create(tmp <- tempfile())
