@@ -10,16 +10,8 @@ parse_log <- function(filename) {
     metadata <- get_prof_info(proflog[1L])
     proflog <- proflog[-1L]
     calls <- unique(proflog, fromLast = TRUE)
-    if (metadata$line.profiling) {
-        ind <- grep("#File ", calls, fixed = TRUE)
-        fnames <- sub("#File \\d+: ?", "", calls[ind])
-        calls <- calls[-ind]
-        tmp <- strsplit(gsub(".*(\\d#\\d).*", "\\1", calls), "#", fixed = TRUE)
-        tmp <- lapply(tmp, as.integer)
-        fnums <- vapply(tmp, .subset2, 1L, FUN.VALUE = 1L)
-        files <- fnames[fnums]
-        lines <- vapply(tmp, .subset2, 2L, FUN.VALUE = 1L)
-    }
+    if (metadata$line.profiling)
+        calls <- calls[!grepl("#File ", calls, fixed = TRUE)]
     real.time <- tabulate(match(proflog, calls)) * metadata$interval
     total.time <- sum(real.time)
     pct.time <- real.time / total.time
@@ -28,8 +20,6 @@ parse_log <- function(filename) {
     calls <- lapply(strsplit(calls, split = " ", fixed = TRUE), rev)
     calls <- vapply(calls, function(x) paste(c(" \u00B0", x), collapse = "/"), character(1L))
     res <- list(pathString = calls, real = real.time, percent = pct.time)
-    if (metadata$line.profiling)
-        res <- append(res, list(file = files, line = lines))
     class(res) <- "data.frame"
     attr(res, "row.names") <- .set_row_names(length(calls))
     res
