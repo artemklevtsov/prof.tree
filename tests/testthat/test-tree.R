@@ -38,7 +38,6 @@ test_that("'real' field", {
 })
 
 test_that("'percent' field", {
-    expect_is(tree$Get("percent"), "character")
-    expect_equal(tree$Get("percent")[1], c(" °" = "100.0 %"))
+    expect_is(tree$Get("percent"), "numeric")
     expect_equal(tree$percent, 1)
 })
